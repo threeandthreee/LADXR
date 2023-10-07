@@ -16,6 +16,10 @@ function getShareLink(data) {
     return l.origin + l.pathname + l.search + hash;
 }
 
+function updateShareLock(event) {
+    console.log('sharelock', event.target.value)
+}
+
 async function seedComplete(data) {
     ID("generatingdialog").checked = false;
 
@@ -266,6 +270,8 @@ function buildUI(filter_function) {
     ID("rom").onchange = updateForm
 
     ID("submitbutton").onclick = startRomGeneration;
+
+    ID("lock-share-link").onchange = updateShareLock;
 }
 
 function updateForm()
