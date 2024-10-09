@@ -1,5 +1,5 @@
-from locations.items import *
-from utils import formatText
+from .locations.items import *
+from .utils import formatText
 
 
 hint_text_ids = [

@@ -1,6 +1,6 @@
 from .itemInfo import ItemInfo
 from .constants import *
-import utils
+from .. import utils
 
 
 class TradeSequenceItem(ItemInfo):

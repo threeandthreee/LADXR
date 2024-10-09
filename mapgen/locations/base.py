@@ -1,4 +1,4 @@
-from roomEditor import RoomEditor
+from ...roomEditor import RoomEditor
 from ..map import RoomInfo
 
 

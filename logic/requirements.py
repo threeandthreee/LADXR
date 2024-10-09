@@ -1,5 +1,5 @@
 from typing import Optional
-from locations.items import *
+from ..locations.items import *
 
 
 class OR:

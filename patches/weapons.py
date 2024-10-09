@@ -1,5 +1,5 @@
-from assembler import ASM
-from roomEditor import RoomEditor
+from ..assembler import ASM
+from ..roomEditor import RoomEditor
 
 
 def patchSuperWeapons(rom):

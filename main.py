@@ -1,11 +1,12 @@
 import binascii
-from romTables import ROMWithTables
+from .romTables import ROMWithTables
 import json
-import randomizer
-import logic.main
-import spoilerLog
+from . import randomizer
+from . import logic
+from .logic import main as _
+from . import spoilerLog
 import argparse
-from settings import Settings
+from .settings import Settings
 from typing import Optional, List
 
 

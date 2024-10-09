@@ -1,4 +1,4 @@
-from assembler import ASM
+from ..assembler import ASM
 import os
 import random
 

@@ -1,6 +1,6 @@
-from assembler import ASM
-from roomEditor import RoomEditor, Object, ObjectVertical, ObjectHorizontal, ObjectWarp
-from utils import formatText
+from ..assembler import ASM
+from ..roomEditor import RoomEditor, Object, ObjectVertical, ObjectHorizontal, ObjectWarp
+from ..utils import formatText
 
 
 def setRequiredInstrumentCount(rom, count):

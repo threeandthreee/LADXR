@@ -1,4 +1,4 @@
-from locations.items import *
+from .locations.items import *
 
 
 DEFAULT_ITEM_POOL = {

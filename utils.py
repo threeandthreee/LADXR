@@ -1,6 +1,6 @@
 from typing import Optional
 
-from locations.items import *
+from .locations.items import *
 
 _NAMES = {
     SWORD: "Sword",

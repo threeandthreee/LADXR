@@ -1,7 +1,7 @@
 import binascii
 from typing import Optional, Dict, Iterator, List, Union, Tuple, Generator
 
-import utils
+from . import utils
 import re
 import os
 

@@ -1,5 +1,5 @@
-from assembler import ASM
-from utils import createTileData
+from ..assembler import ASM
+from ..utils import createTileData
 
 
 def patchFollowerCreation(rom, *, bowwow_everywhere=False, extra_spawn=""):

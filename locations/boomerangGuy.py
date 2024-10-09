@@ -1,7 +1,7 @@
 from .itemInfo import ItemInfo
 from .constants import *
-from assembler import ASM
-from utils import formatText
+from ..assembler import ASM
+from ..utils import formatText
 
 
 class BoomerangGuy(ItemInfo):

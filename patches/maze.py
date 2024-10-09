@@ -1,7 +1,7 @@
-from roomEditor import RoomEditor
-from assembler import ASM
+from ..roomEditor import RoomEditor
+from ..assembler import ASM
 import random
-import utils
+from .. import utils
 
 ALL_SIGN_OPTION_TILES = [
 (101, 1), (102, 1), (106, 1), (107, 1), (108, 1), (111, 1), (74, 2), (75, 2),

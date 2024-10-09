@@ -1,7 +1,8 @@
 import PIL.Image
 import struct
 import argparse
-import patches.aesthetics
+from . import patches
+from .patches import aesthetics as _
 
 
 def convert_endscreen(input_filename, output_filename):

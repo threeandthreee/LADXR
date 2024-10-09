@@ -8,7 +8,7 @@ from . import dungeon7
 from . import dungeon8
 from . import dungeonColor
 from .location import Location
-from locations.all import *
+from ..locations.all import *
 from .requirements import *
 
 

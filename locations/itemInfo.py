@@ -1,5 +1,5 @@
 import typing
-from checkMetadata import checkMetadataTable
+from ..checkMetadata import checkMetadataTable
 
 
 class ItemInfo:

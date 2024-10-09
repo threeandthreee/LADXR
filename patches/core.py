@@ -1,8 +1,8 @@
-from assembler import ASM
-from entranceInfo import ENTRANCE_INFO
-from roomEditor import RoomEditor, Object, ObjectWarp, ObjectHorizontal
-from backgroundEditor import BackgroundEditor
-import utils
+from ..assembler import ASM
+from ..entranceInfo import ENTRANCE_INFO
+from ..roomEditor import RoomEditor, Object, ObjectWarp, ObjectHorizontal
+from ..backgroundEditor import BackgroundEditor
+from .. import utils
 
 
 def bugfixWrittingWrongRoomStatus(rom):

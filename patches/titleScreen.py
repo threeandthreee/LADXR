@@ -1,4 +1,4 @@
-from backgroundEditor import BackgroundEditor
+from ..backgroundEditor import BackgroundEditor
 import subprocess
 import binascii
 

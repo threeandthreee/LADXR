@@ -11,11 +11,11 @@ from . import dungeonColor
 from . import dungeonChain
 from .requirements import AND, OR, COUNT, COUNTS, FOUND, RequirementsSettings
 from .location import Location
-from locations.items import *
-from locations.keyLocation import KeyLocation
-from worldSetup import WorldSetup
-import itempool
-import mapgen
+from ..locations.items import *
+from ..locations.keyLocation import KeyLocation
+from ..worldSetup import WorldSetup
+from .. import itempool
+from .. import mapgen
 
 
 class Logic:

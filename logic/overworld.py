@@ -1,7 +1,7 @@
 from .requirements import *
 from .location import Location
-from locations.all import *
-from worldSetup import ENTRANCE_INFO
+from ..locations.all import *
+from ..worldSetup import ENTRANCE_INFO
 
 
 class World:

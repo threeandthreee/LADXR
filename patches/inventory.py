@@ -1,5 +1,5 @@
-from assembler import ASM
-from backgroundEditor import BackgroundEditor
+from ..assembler import ASM
+from ..backgroundEditor import BackgroundEditor
 
 
 def selectToSwitchSongs(rom):

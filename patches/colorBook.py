@@ -1,4 +1,4 @@
-from assembler import ASM
+from ..assembler import ASM
 
 def fixColorBook(rom):
     # patch to repair the color book shadow/flags. Can still fire projectiles over the book.

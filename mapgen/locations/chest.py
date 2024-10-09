@@ -1,7 +1,7 @@
 from .base import LocationBase
 from ..tileset import solid_tiles, open_tiles, walkable_tiles
-from roomEditor import RoomEditor
-from locations.all import HeartPiece, Chest as ChestLocation
+from ...roomEditor import RoomEditor
+from ...locations.all import HeartPiece, Chest as ChestLocation
 import random
 
 

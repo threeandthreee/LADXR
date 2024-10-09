@@ -6,17 +6,19 @@ import binascii
 from datetime import datetime
 from typing import Optional, List, Dict, Tuple
 
-import explorer
-import locations.itemInfo
-import logic.main
-from locations.items import *
-import generator
-import spoilerLog
-import itempool
-import mapgen
-from plan import Plan
-from worldSetup import WorldSetup
-from settings import Settings
+from . import explorer
+from . import locations
+from .locations import itemInfo as _
+from . import logic
+from .logic import main as _
+from .locations.items import *
+from . import generator
+from . import spoilerLog
+from . import itempool
+from . import mapgen
+from .plan import Plan
+from .worldSetup import WorldSetup
+from .settings import Settings
 
 
 class Error(Exception):

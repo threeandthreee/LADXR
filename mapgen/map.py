@@ -1,6 +1,6 @@
 import random
 from .tileset import solid_tiles, open_tiles
-from locations.items import *
+from ..locations.items import *
 
 
 PRIMARY_ITEMS = [POWER_BRACELET, SHIELD, BOW, HOOKSHOT, MAGIC_ROD, PEGASUS_BOOTS, OCARINA, FEATHER, SHOVEL, MAGIC_POWDER, BOMB, SWORD, FLIPPERS, SONG1]

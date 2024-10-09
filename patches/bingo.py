@@ -1,8 +1,8 @@
-from backgroundEditor import BackgroundEditor
-from roomEditor import RoomEditor, ObjectWarp
-from assembler import ASM
-from locations.constants import *
-from utils import formatText
+from ..backgroundEditor import BackgroundEditor
+from ..roomEditor import RoomEditor, ObjectWarp
+from ..assembler import ASM
+from ..locations.constants import *
+from ..utils import formatText
 
 REQUIRED_ROWS = {"bingo": 1, "bingo-double": 2, "bingo-triple": 3, "bingo-full": 12}
 

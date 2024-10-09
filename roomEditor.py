@@ -1,5 +1,5 @@
 import json
-import entityData
+from . import entityData
 from typing import List
 
 

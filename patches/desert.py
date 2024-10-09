@@ -1,4 +1,4 @@
-from roomEditor import RoomEditor
+from ..roomEditor import RoomEditor
 
 
 def desertAccess(rom):

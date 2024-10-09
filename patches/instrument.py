@@ -1,4 +1,4 @@
-from assembler import ASM
+from ..assembler import ASM
 
 
 def fixInstruments(rom):

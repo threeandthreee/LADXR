@@ -1,7 +1,7 @@
-from assembler import ASM
-from utils import formatText, setReplacementName
-from roomEditor import RoomEditor
-import entityData
+from ..assembler import ASM
+from ..utils import formatText, setReplacementName
+from ..roomEditor import RoomEditor
+from .. import entityData
 import os
 import json
 import struct

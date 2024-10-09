@@ -1,8 +1,8 @@
 import PIL.Image, PIL.ImageDraw
 import os
 import json
-from roomEditor import RoomEditor, ObjectHorizontal, ObjectVertical, ObjectWarp
-from roomInfo import RoomInfo
+from .roomEditor import RoomEditor, ObjectHorizontal, ObjectVertical, ObjectWarp
+from .roomInfo import RoomInfo
 
 
 class Room:

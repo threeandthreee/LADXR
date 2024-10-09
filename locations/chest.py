@@ -1,6 +1,6 @@
 from .itemInfo import ItemInfo
 from .constants import *
-from assembler import ASM
+from ..assembler import ASM
 
 
 class Chest(ItemInfo):

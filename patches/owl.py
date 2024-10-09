@@ -1,6 +1,6 @@
-from roomEditor import RoomEditor
-from assembler import ASM
-from utils import formatText
+from ..roomEditor import RoomEditor
+from ..assembler import ASM
+from ..utils import formatText
 
 
 def removeOwlEvents(rom):

@@ -1,5 +1,5 @@
-from roomEditor import RoomEditor, Object, ObjectHorizontal, ObjectWarp
-from assembler import ASM
+from ..roomEditor import RoomEditor, Object, ObjectHorizontal, ObjectWarp
+from ..assembler import ASM
 
 
 KEY_DOORS = {

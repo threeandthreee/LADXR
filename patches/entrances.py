@@ -1,5 +1,5 @@
-from roomEditor import RoomEditor, ObjectWarp
-from worldSetup import ENTRANCE_INFO
+from ..roomEditor import RoomEditor, ObjectWarp
+from ..worldSetup import ENTRANCE_INFO
 
 
 def changeEntrances(rom, mapping):

@@ -1,5 +1,5 @@
-from logic.requirements import AND, OR, COUNT, FOUND, isConsumable
-from checkMetadata import checkMetadataTable
+from .logic.requirements import AND, OR, COUNT, FOUND, isConsumable
+from .checkMetadata import checkMetadataTable
 
 
 class Explorer:

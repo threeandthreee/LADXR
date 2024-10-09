@@ -1,9 +1,10 @@
-from roomEditor import RoomEditor, WARP_TYPE_IDS, ObjectWarp
-from utils import createTileData
-from assembler import ASM
-import entityData
+from ..roomEditor import RoomEditor, WARP_TYPE_IDS, ObjectWarp
+from ..utils import createTileData
+from ..assembler import ASM
+from .. import entityData
 import os
-import patches.aesthetics
+from .. import patches
+from ..patches import aesthetics as _
 
 
 ALL_TILE_ATTR = [

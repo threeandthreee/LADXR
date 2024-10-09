@@ -1,7 +1,7 @@
 import os
 import binascii
-from assembler import ASM, Assembler
-from utils import formatText
+from ..assembler import ASM, Assembler
+from ..utils import formatText
 
 
 def hasBank3E(rom):

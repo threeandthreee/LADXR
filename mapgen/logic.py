@@ -1,7 +1,7 @@
 from .map import Map
 from .locations.entrance import Entrance
-from logic.location import Location
-from logic.requirements import *
+from ..logic.location import Location
+from ..logic.requirements import *
 from .tileset import walkable_tiles, entrance_tiles
 
 
