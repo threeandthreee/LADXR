@@ -5,6 +5,7 @@ import os
 
 from .romTables import ROMWithTables
 from . import assembler
+from . import utils
 from . import mapgen
 from . import patches
 from .patches import overworld as _
@@ -30,6 +31,7 @@ from .patches import chest as _
 from .patches import bomb as _
 from .patches import rooster as _
 from .patches import shop as _
+from .patches import evilshop as _
 from .patches import trendy as _
 from .patches import goal as _
 from .patches import hardMode as _
@@ -115,7 +117,9 @@ def generateRom(args, settings, seed, logic, *, rnd=None, multiworld=None):
         patches.maptweaks.tweakMap(rom)
         patches.maptweaks.tweakBirdKeyRoom(rom)
     patches.chest.fixChests(rom)
-    patches.shop.fixShop(rom)
+    patches.shop.fixShop(rom, allow_both=settings.shopsanity != '')
+    if settings.evilshop != '':
+        patches.evilshop.addEvilShop(rom)
     patches.rooster.patchRooster(rom)
     patches.trendy.fixTrendy(rom)
     patches.droppedKey.fixDroppedKey(rom)
@@ -209,6 +213,22 @@ def generateRom(args, settings, seed, logic, *, rnd=None, multiworld=None):
         rom.patch(4, 0x36F9, "FA4EDB", "3E0000")
     elif settings.steal == 'always':
         rom.patch(4, 0x36F9, "FA4EDB", "3E0100")
+    elif settings.steal == 'ggs':
+        rom.patch(4, 0x36F9, "FA4EDB", "3E0000")
+        patches.shop.preventShopSaveAndQuitTheft(rom)
+
+    if settings.shopsanity != '':
+        patches.shop.changeShopPrices(rom, 100, 200)
+        patches.shop.createShopRoom(rom, 0x2CB)
+        patches.shop.createShopRoom(rom, 0x29B)
+        patches.shop.createShopRoom(rom, 0x2B4)
+        patches.shop.createShopRoom(rom, 0x29C)
+        patches.shop.createShopRoom(rom, 0x29D)
+        patches.shop.createShopRoom(rom, 0x2CC)
+        patches.shop.createShopRoom(rom, 0x2E3)
+        patches.shop.createShopRoom(rom, 0x299)
+        rom.texts[0x030] = utils.formatText("Only %d {RUPEES}!" % (100,), ask="Buy  No Way")
+        rom.texts[0x02C] = utils.formatText("Only %d {RUPEES}!" % (200,), ask="Buy  No Way")
 
     if settings.hpmode == 'inverted':
         patches.health.setStartHealth(rom, 9)
