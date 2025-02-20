@@ -6,7 +6,7 @@ from . import explorer
 from . import patches
 from .patches import witch as _
 from .settings import Settings
-from .worldSetup import WorldSetup
+from . import worldSetup
 
 
 class RaceRomException(Exception):
@@ -76,7 +76,7 @@ class SpoilerLog:
 
         world_setups = []
         for rom in roms:
-            world_setup = WorldSetup()
+            world_setup = worldSetup.WorldSetup()
             world_setup.loadFromRom(rom)
             world_setups.append(world_setup)
 
@@ -86,7 +86,7 @@ class SpoilerLog:
             self.logic = logic.main.MultiworldLogic(self.settings, world_setups=world_setups)
 
         self._loadItems(self.settings, roms)
-    
+
     def _loadItems(self, settings, roms):
         remainingItems = set(self.logic.iteminfo_list)
 
@@ -115,7 +115,7 @@ class SpoilerLog:
                     ii.item = itemContents[ii]
                     if ii in remainingItems:
                         remainingItems.remove(ii)
-            
+
             lastAccessibleLocations = e.getAccessableLocations()
             currentSphere += 1
 
@@ -150,9 +150,9 @@ class SpoilerLog:
         else:
             with open(filename, 'w') as logFile:
                 logFile.write(str(self))
-        
+
         print("Saved: %s" % filename)
-    
+
     def outputJson(self, filename=None, zipFile=None):
         if not filename:
             filename = "LADXR_%s.json" % self.seed
@@ -197,5 +197,5 @@ class SpoilerLog:
             lines += [str(x) for x in sorted(self.inaccessibleItems, key=lambda x: (x.sphere if x.sphere is not None else sys.maxsize, x.area, x.locationName))]
         else:
             lines.append("Success!  All locations can be accessed.")
-        
+
         return '\n'.join(lines)

@@ -46,6 +46,8 @@ C127:wBGUpdateRegionOriginLow
 C12B:wTransitionZeroNeverUsed
 C144:wIsLinkPushing
 C146:wIsLinkInTheAir
+C15B:wIsUsingShield
+C166:wLinkPlayingOcarinaCountdown
 C16B:wTransitionSequenceCounter
 C19B:wLinkAttackStepAnimationCountdown
 C19F:wDialogState
@@ -61,6 +63,8 @@ C270:wEntitiesSpeedYAccTable
 C280:wEntitiesStatusTable
 C290:wEntitiesStateTable
 C2A0:wEntitiesCollisionsTable
+C2B0:wEntitiesPrivateState1Table
+C2C0:wEntitiesPrivateState2Table
 C2E0:wEntitiesTransitionCountdownTable
 C2F0:wEntitiesPrivateCountdown1Table
 C300:wEntitiesPrivateCountdown2Table
@@ -68,6 +72,7 @@ C310:wEntitiesPosZTable
 C320:wEntitiesSpeedZTable
 C340:wEntitiesPhysicsFlagsTable
 C360:wEntitiesHealthTable
+C370:wEntitiesUnusedTableA
 C380:wEntitiesDirectionTable
 C390:wEntitiesPrivateState5Table
 C3A0:wEntitiesTypeTable
@@ -78,8 +83,12 @@ C420:wEntitiesFlashCountdownTable
 C440:wEntitiesPrivateState4Table
 C460:wEntitiesLoadOrderTable
 C490:wEntitiesLiftedTable
+C4E0:wEntitiesDroppedItemTable
 C50A:wBlockItemUsage
+C509:wItemPickedUpInShop
 D1E0:wBowwowChain ; Need $1A bytes for the chain and other bowwow related memory
+D219:wFinalNightmareForm
+D368:wMusicTrackToPlay
 D401:wWarpStructs
 D416:wWarp0PositionTileIndex
 D417:wWarp1PositionTileIndex
@@ -88,6 +97,8 @@ D419:wWarp3PositionTileIndex
 D46C:wBossDefeated
 D47C:wActivePowerUp
 D711:wRoomObjects
+D600:wDrawCommandsSize
+D601:wDrawCommand
 D800:wOverworldRoomStatus
 D900:wIndoorARoomStatus
 DA00:wIndoorBRoomStatus
@@ -217,16 +228,24 @@ FF92:hBGTilesLoadingStage
 FF94:hWorldTileset
 FF9A:hLinkSpeedX
 FF9B:hLinkSpeedY
+FF9C:hLinkPhysicsModifier
 FF9D:hLinkAnimationState
 FF9E:hLinkDirection
 FFA1:hLinkInteractiveMotionBlocked
 FFA3:hLinkVelocityZ
 FFA6:hAnimatedTilesFrameCount
+FFAC:hStaircase
+FFAD:hStaircasePosX
+FFAE:hStaircasePosY
 FFAF:hObjectUnderEntity
+FFB0:hDefaultMusicTrack
+FFBD:hDefaultMusicTrackAlt
 FFC0:hDMARoutine
 FFCB:hPressedButtonsMask
 FFCD:hIntersectedObjectTop
 FFCE:hIntersectedObjectLeft
+FFCF:hIntersectedObjectBGAddressHigh
+FFD0:hIntersectedObjectBGAddressLow
 FFD7:hMultiPurpose0
 FFD8:hMultiPurpose1
 FFD9:hMultiPurpose2

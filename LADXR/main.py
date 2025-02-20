@@ -6,6 +6,7 @@ from . import logic
 from .logic import main as _
 from . import spoilerLog
 import argparse
+from .utils import Error
 from .settings import Settings
 from typing import Optional, List
 
@@ -142,7 +143,7 @@ def main(mainargs: Optional[List[str]] = None) -> None:
             r = randomizer.Randomizer(args, settings, seed=userSeed)
             seed = binascii.hexlify(r.seed).decode("ascii").upper()
             break
-        except randomizer.Error as e:
+        except Error as e:
             if userSeed is not None:
                 print("Specified seed does not produce a valid result.")
                 sys.exit(1)
