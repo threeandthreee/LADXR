@@ -8,7 +8,7 @@ from roomEditor import RoomEditor
 
 class StartItem(DroppedKey):
     # We need to give something here that we can use to progress.
-    OPTIONS = [SWORD, SHIELD, POWER_BRACELET, OCARINA, FEATHER, BOOMERANG, MAGIC_ROD, TAIL_KEY, SHOVEL, HOOKSHOT, PEGASUS_BOOTS, MAGIC_POWDER, BOMB]
+    OPTIONS = [SWORD, SHIELD, POWER_BRACELET, OCARINA, FEATHER, BOOMERANG, MAGIC_ROD, TAIL_KEY, SHOVEL, HOOKSHOT, PEGASUS_BOOTS, MAGIC_POWDER, BOMB, FLIPPERS]
 
     def __init__(self):
         super().__init__(0x2A3)
@@ -19,8 +19,6 @@ class StartItem(DroppedKey):
             # When we have bowwow mode, we pretend to be a sword for logic reasons
             self.OPTIONS = [SWORD]
             self.give_bowwow = True
-        elif options.randomstartlocation and options.entranceshuffle != 'none':
-            self.OPTIONS.append(FLIPPERS)
 
     def patch(self, rom, option):
 

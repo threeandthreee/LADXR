@@ -157,29 +157,43 @@ Spoiler logs can not be generated for ROMs generated with race mode enabled, and
 [Standard] Dungeon maps/compasses are only in their dungeon.
 [Keysanity] Dungeon maps/compasses can be anywhere.
 [Removed] No maps/compasses."""),
-            Setting('randomstartlocation', 'Entrances', 'r', 'Random start location', default=False,
-                description='Randomize where your starting house is located'),
-            Setting('dungeonshuffle', 'Entrances', 'u', 'Dungeon shuffle', default=False,
-                description='Randomizes the dungeon that each dungeon entrance leads to'),
-            Setting('entranceshuffle', 'Entrances', 'E', 'Entrance randomizer', options=[("none", '', "Default"), ("simple", 's', "Simple"), ("split", 'S', "Split"), ("mixed", 'm', "Mixed"), ("wild", 'w', "Wild"), ("chaos", "c", "Chaos"), ("insane", 'i', "Insane"), ("madness", 'M', "Madness")], default='none',
-                description="""Randomizes where overworld entrances lead to.
-[Simple] Single entrance caves that contain items are randomized.
-[Split] Connector caves are also randomized, in a separate pool from single entrance caves.
-[Mixed] Connector caves are also randomized, in the same pool as single entrance caves.
+            Setting('entrancerules', 'Entrances', 'E', 'Entrance rules', options=[("normal", 'n', "Normal"), ("wild", 'w', "Wild"), ("chaos", "c", "Chaos"), ("insane", 'i', "Insane"), ("madness", 'M', "Madness")], default='normal',
+                description="""Sets how doors work when shuffled.
+[Normal] Doors function normally.
 [Wild] Connections can go from overworld to overworld, or inside to inside.
 [Chaos] Entrance and exits are decoupled.
 [Insane] Combines chaos and wild, anything goes anywhere, there is no God.
 [Madness] Even worse then insane, it makes it so multiple entrances can lead to the same location.
-If random start location and/or dungeon shuffle is enabled, then these will be shuffled with all the entrances."""),
-            Setting('shufflejunk', 'Entrances', 'j', 'Shuffle itemless entrances', default=False,
-                description="Caves/houses without items are also randomized when entrance shuffle is set.",
-                visible_if=['entranceshuffle', "simple", "split", "mixed", "wild", "chaos", "insane", "madness"]),
-            Setting('shuffleannoying', 'Entrances', 'a', 'Shuffle annoying entrances', default=False,
-                description="A few very annoying entrances (Mamu and the Raft House) will also be randomized when entrance shuffle is set.",
-                visible_if=['entranceshuffle', "simple", "split", "mixed", "wild", "chaos", "insane", "madness"]),
-            Setting('shufflewater', 'Entrances', 'w', 'Shuffle water entrances', default=False,
-                description="Entrances that lead to water (Manbo and Damp Cave) will also be randomized when entrance shuffle is set. Use the warp-to-home from the Save & Quit menu if you get stuck (hold A+B+Start+Select until it works).",
-                visible_if=['entranceshuffle', "simple", "split", "mixed", "wild", "chaos", "insane", "madness"]),
+This does nothing unless other settings are enabled to add entrances to the pool."""),
+            Setting('randomstartlocation', 'Entrances', 'r', 'Random start location', options=[("none", '', "Disabled"), ("limited", 'l', "Limited"), ("global", 'g', "Global")], default='none',
+                description="""Randomize where your starting house is located.
+[Limited] Your start location will be selected from a curated list of overworld locations.
+[Global] Your start location is shuffled into the global entrance pool."""),
+            Setting('dungeonshuffle', 'Entrances', 'u', 'Dungeon shuffle', options=[("none", '', "Disabled"), ("limited", 'l', "Limited"), ("global", 'g', "Global")], default='none',
+                description="""Randomizes where dungeon entrances lead to.
+[Limited] They are shuffled with each other.
+[Global] They are added to the global entrance pool."""),
+            Setting('shuffleconnectors', 'Entrances', 'y', 'Shuffle connectors', options=[("none", '', "Disabled"), ("limited", 'l', "Limited"), ("global", 'g', "Global")], default='none',
+                description="""Randomizes where caves/houses with two entrances lead to.
+[Limited] They are shuffled with each other.
+[Global] They are added to the global entrance pool."""),
+            Setting('shufflebasic', 'Entrances', 'z', 'Shuffle basic entrances', options=[("none", '', "Disabled"), ("limited", 'l', "Limited"), ("global", 'g', "Global")], default='none',
+                description="""Randomizes where caves/houses with items lead to.
+[Limited] They are shuffled with each other.
+[Global] They are added to the global entrance pool."""),
+            Setting('shufflejunk', 'Entrances', 'j', 'Shuffle itemless entrances', options=[("none", '', "Disabled"), ("limited", 'l', "Limited"), ("global", 'g', "Global")], default='none',
+                description="""Randomizes where caves/houses without items lead to.
+[Limited] They are shuffled with each other.
+[Global] They are added to the global entrance pool."""),
+            Setting('shuffleannoying', 'Entrances', 'a', 'Shuffle annoying entrances', options=[("none", '', "Disabled"), ("limited", 'l', "Limited"), ("global", 'g', "Global")], default='none',
+                description="""Randomizes where caves/houses with items lead to.
+[Limited] They are shuffled with each other.
+[Global] They are added to the global entrance pool."""),
+            Setting('shufflewater', 'Entrances', 'w', 'Shuffle water entrances', options=[("none", '', "Disabled"), ("limited", 'l', "Limited"), ("global", 'g', "Global")], default='none',
+                description="""Randomizes where caves/houses with items lead to.
+[Limited] They are shuffled with each other.
+[Global] They are added to the global entrance pool.
+Use the warp-to-home from the Save & Quit menu if you get stuck (hold A+B+Start+Select until it works)."""),
             Setting('boss', 'Gameplay', 'B', 'Boss shuffle', options=[('default', '', 'Normal'), ('shuffle', 's', 'Shuffle'), ('random', 'r', 'Randomize')], default='default',
                 description='Randomizes the dungeon bosses that each dungeon has.'),
             Setting('miniboss', 'Gameplay', 'b', 'Miniboss shuffle', options=[('default', '', 'Normal'), ('shuffle', 's', 'Shuffle'), ('random', 'r', 'Randomize')], default='default',

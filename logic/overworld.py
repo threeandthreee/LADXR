@@ -95,7 +95,8 @@ class World:
         crazy_tracy_hut_inside = Location("Crazy Tracy's House")
         Location("Medicine Purchase").add(KeyLocation("MEDICINE2")).connect(crazy_tracy_hut_inside, FOUND("RUPEES", 50))
         self._addEntrance("crazy_tracy", crazy_tracy_hut, crazy_tracy_hut_inside, None)
-        start_house.connect(crazy_tracy_hut, AND(OCARINA, SONG2), back=False) # Manbo's Mambo into the pond outside Tracy
+        if not world_setup.is_partial: # Ignore this connection when figuring out entrance shuffle
+            start_house.connect(crazy_tracy_hut, AND(OCARINA, SONG2), back=False) # Manbo's Mambo into the pond outside Tracy
 
         forest_madbatter = Location("Forest Mad Batter")
         Location().add(MadBatter(0x1E1)).connect(forest_madbatter, MAGIC_POWDER)
@@ -686,8 +687,9 @@ class World:
             outside_rooster_house.connect(below_right_taltal, r.jesus_rooster, back=False) # jesus rooster down to staircase below damp cave
             outside_rooster_house.connect(middle_right_taltal, r.jesus_buffer, back=False) # boots bonk from the staircase to the bottom left next to the waterfall to avoid falling down
             
-            if options.entranceshuffle in ("default", "simple"): # connector cave from armos d6 area to raft shop may not be randomized to add a flippers path since flippers stop you from jesus jumping
-                below_right_taltal.connect(raft_game, AND(OR(r.jesus_jump, r.jesus_rooster), r.attack_hookshot_powder), back=False) # jesus jump from heartpiece water cave, around the island and clip past the diagonal gap in the rock, then jesus jump all the way down the waterfall to the chests (attack req for hardlock flippers+feather scenario)
+            # I don't understand this well enough to convert for ER change
+            # if options.entranceshuffle in ("default", "simple"): # connector cave from armos d6 area to raft shop may not be randomized to add a flippers path since flippers stop you from jesus jumping
+            #     below_right_taltal.connect(raft_game, AND(OR(r.jesus_jump, r.jesus_rooster), r.attack_hookshot_powder), back=False) # jesus jump from heartpiece water cave, around the island and clip past the diagonal gap in the rock, then jesus jump all the way down the waterfall to the chests (attack req for hardlock flippers+feather scenario)
             outside_raft_house.connect(below_right_taltal, AND(r.super_jump, PEGASUS_BOOTS)) # superjump from ledge left to right, can buffer to land on ledge instead of water, then superjump right which is pixel perfect. Boots to get out of wall after landing
             bridge_seashell.connect(outside_rooster_house, AND(OR(r.hookshot_spam_pit, r.boots_bonk_pit), POWER_BRACELET)) # boots bonk or hookshot spam over the pit to get to the rock
             bird_key.connect(bird_cave, AND(r.boots_jump, r.pit_buffer)) # boots jump above wall, use multiple pit buffers to get across

@@ -40,8 +40,12 @@ class Randomizer:
                 if world_setup.map is None:
                     continue
             random.setstate(self.rnd.getstate())
-            self.__logic = logic.main.Logic(settings, world_setup=world_setup)
-            if settings.entranceshuffle not in ("split", "mixed", "wild", "chaos", "insane", "madness") or len(self.__logic.iteminfo_list) == sum(itempool.ItemPool(self.__logic, settings, self.rnd, self.plan != None).toDict().values()):
+            
+            log = logic.main.Logic(settings, world_setup=world_setup)
+            self.__logic = log
+            logic_item_count = len(log.iteminfo_list)
+            itempool_count = sum(itempool.ItemPool(log, settings, self.rnd, self.plan != None).toDict().values())
+            if logic_item_count == itempool_count:
                 break
 
         if self.plan:

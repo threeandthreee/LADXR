@@ -73,10 +73,11 @@ class Logic:
                 else:
                     world_setup.entrance_mapping[k] = f"{k}:inside"
         if configuration_options.overworld not in {"dungeonchain", "random"}:
-            for k in world.entrances.keys():
-                assert k in world_setup.entrance_mapping, k
-            for k in world_setup.entrance_mapping.keys():
-                assert k in world.entrances, k
+            if not world_setup.is_partial:
+                for k in world.entrances.keys():
+                    assert k in world_setup.entrance_mapping, k
+                for k in world_setup.entrance_mapping.keys():
+                    assert k in world.entrances, k
 
             for source, target in world_setup.entrance_mapping.items():
                 se = world.entrances[source]
